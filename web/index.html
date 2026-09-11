@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PulseRTC — Pub/Sub</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 1.5rem; max-width: 1100px; }
+    fieldset { margin-bottom: 1rem; }
+    input, button { font-size: 1rem; padding: .35rem .5rem; }
+    .videos { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .videos figure { margin: 0; position: relative; }
+    video { width: 300px; max-width: 40vw; background: #000; border-radius: 6px; display: block; }
+    figcaption { font-size: .8rem; color: #555; }
+    .badges { font-size: .9rem; min-height: 1.2em; }
+    #log { white-space: pre-wrap; background: #111; color: #0f0; padding: .75rem;
+           height: 180px; overflow-y: auto; font-family: monospace; font-size: .78rem; }
+    .row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin: .35rem 0; }
+    code { background: #eee; padding: .1rem .3rem; }
+    #status { font-weight: bold; }
+    table { border-collapse: collapse; font-size: .8rem; width: 100%; }
+    td, th { border: 1px solid #ccc; padding: .2rem .4rem; text-align: left; }
+    th { background: #eee; }
+    ul { margin: .2rem 0; padding-left: 1.2rem; }
+    #publicationList label { font-size: .88rem; }
+    #qoePanel { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .qcard { border: 1px solid #ccc; border-radius: 6px; padding: .5rem .7rem; min-width: 260px; font-size: .82rem; }
+    .qhead { font-size: .9rem; margin-bottom: .3rem; }
+    .qrow { margin: .12rem 0; }
+    .qscore { color: #666; }
+    .qmet { color: #555; }
+    .qprob { color: #c62828; }
+    .qtl { display: flex; gap: 1px; margin-top: .35rem; height: 12px; }
+    .qtl span { width: 6px; display: inline-block; border-radius: 1px; }
+</style>
+</head>
+<body>
+  <h1>PulseRTC — Multi-Track Pub/Sub</h1>
+
+  <fieldset>
+    <legend>Room</legend>
+    <div class="row">
+      <label>Room ID <input id="roomId" value="demo" /></label>
+      <button id="joinBtn">Entrar</button>
+      <button id="leaveBtn" disabled>Sair</button>
+    </div>
+    <div class="row">
+      <label style="flex:1">Token JWT
+        <input id="token" placeholder="cole o token de acesso (obrigatório se a autenticação estiver ativa)" style="width:100%" />
+      </label>
+    </div>
+    <div class="row">Participant ID: <code id="myId">—</code></div>
+    <div class="row">Status: <span id="status">idle</span></div>
+    <div class="row">Participantes: <strong id="participantCount">0</strong></div>
+    <ul id="participantList"></ul>
+  </fieldset>
+
+  <fieldset id="mediaControls" hidden>
+    <legend>Sua mídia</legend>
+    <div class="videos">
+      <figure>
+        <figcaption>Local (você)</figcaption>
+        <video id="localVideo" autoplay playsinline muted></video>
+      </figure>
+      <figure id="localScreenFigure" hidden>
+        <figcaption>Tela (você)</figcaption>
+        <video id="localScreen" autoplay playsinline muted></video>
+      </figure>
+    </div>
+    <div class="row">
+      Áudio: <code id="localAudioState">—</code>
+      Vídeo: <code id="localVideoState">—</code>
+      Tela: <code id="localScreenState">—</code>
+    </div>
+    <div class="row">
+      <button id="muteBtn">🎤 Mute</button>
+      <button id="cameraBtn">📹 Camera Off</button>
+      <button id="publishVideoBtn">⛔ Unpublish vídeo</button>
+      <button id="screenShareBtn">🖥️ Compartilhar tela</button>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Participantes remotos (encaminhados pelo SFU)</legend>
+    <div class="videos" id="remoteVideos"></div>
+    <div class="row"><button id="playRemoteBtn" hidden>▶ Tocar remotos</button></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Publications — escolha o que receber</legend>
+    <div id="publicationList"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>QoE — Qualidade percebida (/quality, 2s)</legend>
+    <div id="qoePanel"></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Diagnóstico do SFU (/sfu/stats, 1s)</legend>
+    <div class="row">Conn: <code id="d-conn">—</code> ICE: <code id="d-ice">—</code></div>
+    <table>
+      <thead>
+        <tr><th>Participant</th><th>Role</th><th>Conn</th><th>Publications</th>
+            <th>Subs</th><th>Inbound (Pub→SFU)</th><th>Outbound (SFU→Sub)</th></tr>
+      </thead>
+      <tbody id="sfuStatsBody"></tbody>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <legend>Logs</legend>
+    <div id="log"></div>
+  </fieldset>
+
+  <script src="stats.js"></script>
+  <script src="quality.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

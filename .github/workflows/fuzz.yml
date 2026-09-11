@@ -1,0 +1,14 @@
+name: fuzz
+on:
+  pull_request:
+    paths: ["internal/auth/**", "internal/signaling/**", "internal/cluster/**", ".github/workflows/fuzz.yml"]
+jobs:
+  fuzz:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: "1.24" }
+      - run: go test ./internal/auth/    -run '^$' -fuzz FuzzParseToken             -fuzztime 30s
+      - run: go test ./internal/signaling/ -run '^$' -fuzz FuzzInbound              -fuzztime 30s
+      - run: go test ./internal/cluster/  -run '^$' -fuzz FuzzClusterMessageValidate -fuzztime 30s

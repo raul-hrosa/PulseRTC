@@ -1,0 +1,116 @@
+# Two PulseRTC nodes sharing distributed state through Redis.
+#
+#   docker compose -f deploy/docker-compose.redis.yml up --build
+#
+# Then:
+#   - join room "demo" via ws://localhost:8090/ws   -> node-01 claims it in Redis
+#   - join room "demo" via ws://localhost:8092/ws   -> node-02 reads the SAME
+#     Redis and replies {"type":"error","code":"ROOM_ON_OTHER_NODE",
+#     "nodeId":"pulsertc-node-01"} without creating a duplicate room.
+#   - curl localhost:8090/metrics.json | jq .cluster   -> backend:"redis", node/room counts
+#
+# Redis is COORDINATION ONLY — every RTP packet still flows Local SFU -> UDP,
+# never through Redis. Redis sits on an internal-only network with no
+# published ports, so nothing outside the compose project can reach it.
+networks:
+  edge:
+    driver: bridge
+  clusternet:
+    driver: bridge
+    internal: true
+
+services:
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    networks:
+      - clusternet
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 2s
+      retries: 10
+
+  pulsertc-node-01:
+    build: ..
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - edge
+      - clusternet
+    ports:
+      - "8090:8090"
+      - "8091:8091/udp"
+    environment:
+      PORT: "8090"
+      SFU_UDP_PORT: "8091"
+      SFU_NAT_1TO1_IP: "127.0.0.1"
+      PULSERTC_AUTH_ENABLED: "true"
+      PULSERTC_JWT_SECRET: "${PULSERTC_JWT_SECRET:-change-me-use-a-long-random-secret}"
+      PULSERTC_CLUSTER_ENABLED: "true"
+      PULSERTC_NODE_ID: "pulsertc-node-01"
+      PULSERTC_NODE_HOST: "pulsertc-node-01"
+      PULSERTC_NODE_PORT: "8090"
+      PULSERTC_CLUSTER_SECRET: "${PULSERTC_CLUSTER_SECRET:-change-me-cluster-secret}"
+      PULSERTC_CLUSTER_PEERS: "http://pulsertc-node-02:8092"
+      PULSERTC_REDIS_ENABLED: "true"
+      PULSERTC_REDIS_ADDR: "redis:6379"
+      PULSERTC_REDIS_PREFIX: "pulsertc"
+      PULSERTC_REDIS_REQUIRED: "true"
+      # Cross-node signaling. The /internal/cluster/messages endpoint
+      # is reached over the shared docker network (peers resolve each other's
+      # address from the Redis node registry) and is cluster-secret authenticated.
+      PULSERTC_CLUSTER_REQUEST_TIMEOUT: "2s"
+      PULSERTC_CLUSTER_MAX_MESSAGE_SIZE: "65536"
+      PULSERTC_CLUSTER_MESSAGE_MAX_AGE: "30s"
+      # Cross-node media. The UDP media port lives on the internal
+      # cluster network only (not published), authenticated with the cluster
+      # secret. RTP/RTCP never touch Redis or the signaling HTTP path.
+      PULSERTC_MEDIA_ENABLED: "true"
+      PULSERTC_MEDIA_BIND_ADDR: "0.0.0.0"
+      PULSERTC_MEDIA_PORT: "10000"
+      PULSERTC_MEDIA_ADVERTISE_HOST: "pulsertc-node-01"
+    restart: unless-stopped
+
+  pulsertc-node-02:
+    build: ..
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - edge
+      - clusternet
+    ports:
+      - "8092:8092"
+      - "8093:8093/udp"
+    environment:
+      PORT: "8092"
+      SFU_UDP_PORT: "8093"
+      SFU_NAT_1TO1_IP: "127.0.0.1"
+      PULSERTC_AUTH_ENABLED: "true"
+      PULSERTC_JWT_SECRET: "${PULSERTC_JWT_SECRET:-change-me-use-a-long-random-secret}"
+      PULSERTC_CLUSTER_ENABLED: "true"
+      PULSERTC_NODE_ID: "pulsertc-node-02"
+      PULSERTC_NODE_HOST: "pulsertc-node-02"
+      PULSERTC_NODE_PORT: "8092"
+      PULSERTC_CLUSTER_SECRET: "${PULSERTC_CLUSTER_SECRET:-change-me-cluster-secret}"
+      PULSERTC_CLUSTER_PEERS: "http://pulsertc-node-01:8090"
+      PULSERTC_REDIS_ENABLED: "true"
+      PULSERTC_REDIS_ADDR: "redis:6379"
+      PULSERTC_REDIS_PREFIX: "pulsertc"
+      PULSERTC_REDIS_REQUIRED: "true"
+      # Cross-node signaling. The /internal/cluster/messages endpoint
+      # is reached over the shared docker network (peers resolve each other's
+      # address from the Redis node registry) and is cluster-secret authenticated.
+      PULSERTC_CLUSTER_REQUEST_TIMEOUT: "2s"
+      PULSERTC_CLUSTER_MAX_MESSAGE_SIZE: "65536"
+      PULSERTC_CLUSTER_MESSAGE_MAX_AGE: "30s"
+      # Cross-node media. The UDP media port lives on the internal
+      # cluster network only (not published), authenticated with the cluster
+      # secret. RTP/RTCP never touch Redis or the signaling HTTP path.
+      PULSERTC_MEDIA_ENABLED: "true"
+      PULSERTC_MEDIA_BIND_ADDR: "0.0.0.0"
+      PULSERTC_MEDIA_PORT: "10000"
+      PULSERTC_MEDIA_ADVERTISE_HOST: "pulsertc-node-02"
+    restart: unless-stopped

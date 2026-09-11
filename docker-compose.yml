@@ -1,0 +1,65 @@
+services:
+  pulsertc:
+    build: .
+    ports:
+      - "${PORT:-8090}:${PORT:-8090}"
+      # ICE media: the SFU muxes all WebRTC traffic onto this single UDP port.
+      - "${SFU_UDP_PORT:-8091}:${SFU_UDP_PORT:-8091}/udp"
+    environment:
+      PORT: "${PORT:-8090}"
+      SFU_UDP_PORT: "${SFU_UDP_PORT:-8091}"
+      # IP the SFU advertises to browsers. 127.0.0.1 works for same-host
+      # testing (docker publishes the UDP port to the host); set to the
+      # machine's LAN/public IP to reach the SFU from other devices.
+      SFU_NAT_1TO1_IP: "${SFU_NAT_1TO1_IP:-127.0.0.1}"
+      # ICE servers the SFU offers to browsers (also sent to the client in the
+      # `welcome` message). Defaults to Google STUN. For NAT traversal on an
+      # open audience, run the `turn` profile below and set:
+      #   PULSERTC_TURN_URLS=turn:<public-host>:3478
+      #   PULSERTC_TURN_USERNAME / PULSERTC_TURN_PASSWORD
+      PULSERTC_STUN_URLS: "${PULSERTC_STUN_URLS:-}"
+      PULSERTC_TURN_URLS: "${PULSERTC_TURN_URLS:-}"
+      PULSERTC_TURN_USERNAME: "${PULSERTC_TURN_USERNAME:-}"
+      PULSERTC_TURN_PASSWORD: "${PULSERTC_TURN_PASSWORD:-}"
+      # Security / auth. The secret is read from the environment /
+      # .env — no real secret is committed here. With auth enabled the server
+      # will not start unless PULSERTC_JWT_SECRET is set.
+      PULSERTC_AUTH_ENABLED: "${PULSERTC_AUTH_ENABLED:-true}"
+      PULSERTC_JWT_SECRET: "${PULSERTC_JWT_SECRET:-change-me-use-a-long-random-secret}"
+      PULSERTC_JWT_ISSUER: "${PULSERTC_JWT_ISSUER:-pulsertc}"
+      PULSERTC_JWT_AUDIENCE: "${PULSERTC_JWT_AUDIENCE:-pulsertc}"
+      PULSERTC_TOKEN_MAX_AGE: "${PULSERTC_TOKEN_MAX_AGE:-1h}"
+      PULSERTC_MAX_MESSAGE_SIZE: "${PULSERTC_MAX_MESSAGE_SIZE:-65536}"
+      PULSERTC_RATE_LIMIT: "${PULSERTC_RATE_LIMIT:-120}"
+      PULSERTC_MSG_RATE: "${PULSERTC_MSG_RATE:-100}"
+      PULSERTC_METRICS_PUBLIC: "${PULSERTC_METRICS_PUBLIC:-false}"
+      # Integration API. Enabled by default; set
+      # PULSERTC_API_KEYS to use it (otherwise every /v1 call is 401), or set
+      # PULSERTC_API_ENABLED=false to disable the check for local testing.
+      PULSERTC_API_ENABLED: "${PULSERTC_API_ENABLED:-true}"
+      PULSERTC_API_KEYS: "${PULSERTC_API_KEYS:-}"
+      PULSERTC_API_RATE_LIMIT: "${PULSERTC_API_RATE_LIMIT:-600}"
+      # Advertised to the integrating app for GET /v1/rooms/:id/connection and
+      # the "connection" block of POST /v1/rooms.
+      PULSERTC_PUBLIC_WS_URL: "${PULSERTC_PUBLIC_WS_URL:-ws://localhost:8090/ws}"
+      PULSERTC_API_TOKEN_TTL: "${PULSERTC_API_TOKEN_TTL:-1h}"
+      PULSERTC_API_TOKEN_TTL_MAX: "${PULSERTC_API_TOKEN_TTL_MAX:-12h}"
+      PULSERTC_API_ALLOW_CONTROL_TOKENS: "${PULSERTC_API_ALLOW_CONTROL_TOKENS:-false}"
+      PULSERTC_API_ROOM_TTL: "${PULSERTC_API_ROOM_TTL:-5m}"
+      PULSERTC_WEBHOOK_URL: "${PULSERTC_WEBHOOK_URL:-}"
+      PULSERTC_WEBHOOK_SECRET: "${PULSERTC_WEBHOOK_SECRET:-}"
+    restart: unless-stopped
+
+  # Optional TURN server for NAT traversal (symmetric NAT on the browser side).
+  # Enable with:  docker compose --profile turn up
+  # host networking is the simplest way to give coturn its relay port range;
+  # set TURN_REALM / TURN_USER / TURN_PASSWORD in .env and point
+  # PULSERTC_TURN_URLS at this host.
+  coturn:
+    image: coturn/coturn:4.6
+    profiles: ["turn"]
+    network_mode: host
+    volumes:
+      - ./deploy/turnserver.conf:/etc/coturn/turnserver.conf:ro
+    command: ["-c", "/etc/coturn/turnserver.conf"]
+    restart: unless-stopped

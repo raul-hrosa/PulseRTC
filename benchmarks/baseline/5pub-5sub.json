@@ -1,0 +1,4223 @@
+{
+  "timestamp": "2026-09-03T18:59:57.024704193Z",
+  "scenario": "5pub-5sub",
+  "configuration": {
+    "serverUrl": "http://localhost:8090",
+    "roomId": "load-test",
+    "participants": 10,
+    "publishers": 5,
+    "publishAudio": true,
+    "publishVideo": true,
+    "subscribeAll": true,
+    "duration": 20000000000,
+    "rampUp": 0,
+    "rampDown": 0,
+    "scenario": "5pub-5sub",
+    "outputDir": "/tmp/bench",
+    "samplePeriod": 1000000000,
+    "joinLeaveLoop": false,
+    "auth": {
+      "enabled": false,
+      "issuer": "pulsertc",
+      "audience": "pulsertc",
+      "invalidRatio": 0
+    }
+  },
+  "host": {
+    "os": "linux",
+    "arch": "amd64",
+    "cpus": 4,
+    "go": "go1.24.13",
+    "gitCommit": "unavailable"
+  },
+  "serverStart": {
+    "timestamp": "2026-09-03T18:59:36.509358201Z",
+    "uptimeSec": 22.786932486,
+    "host": {
+      "os": "linux",
+      "arch": "amd64",
+      "cpus": 4,
+      "go": "go1.24.13",
+      "commit": "unavailable"
+    },
+    "runtime": {
+      "goroutines": 10,
+      "heapAllocBytes": 1249464,
+      "heapSysBytes": 7766016,
+      "allocBytes": 1249464,
+      "totalAllocBytes": 13977112,
+      "sysBytes": 13718792,
+      "numGC": 6,
+      "goCpuSeconds": 0.527044351
+    },
+    "sfu": {
+      "rooms": {
+        "active": 0,
+        "created": 1,
+        "closed": 1
+      },
+      "peerConnections": {
+        "active": 0,
+        "created": 2,
+        "closed": 2
+      },
+      "tracks": {
+        "active": 0,
+        "created": 2,
+        "removed": 2
+      },
+      "publications": {
+        "active": 0,
+        "created": 2,
+        "removed": 2
+      },
+      "subscriptions": {
+        "active": 0,
+        "created": 2,
+        "removed": 2
+      },
+      "negotiations": {
+        "started": 2,
+        "completed": 2,
+        "coalesced": 0,
+        "failed": 0
+      },
+      "rtp": {
+        "packetsReceived": 0,
+        "packetsSent": 0,
+        "packetsLost": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0
+      }
+    }
+  },
+  "serverEnd": {
+    "timestamp": "2026-09-03T18:59:57.024256255Z",
+    "uptimeSec": 43.303149999,
+    "host": {
+      "os": "linux",
+      "arch": "amd64",
+      "cpus": 4,
+      "go": "go1.24.13",
+      "commit": "unavailable"
+    },
+    "runtime": {
+      "goroutines": 8,
+      "heapAllocBytes": 27576368,
+      "heapSysBytes": 45252608,
+      "allocBytes": 27576368,
+      "totalAllocBytes": 210403424,
+      "sysBytes": 52778248,
+      "numGC": 60,
+      "goCpuSeconds": 4.4462473319999996
+    },
+    "sfu": {
+      "rooms": {
+        "active": 0,
+        "created": 2,
+        "closed": 2
+      },
+      "peerConnections": {
+        "active": 0,
+        "created": 12,
+        "closed": 12
+      },
+      "tracks": {
+        "active": 0,
+        "created": 12,
+        "removed": 12
+      },
+      "publications": {
+        "active": 0,
+        "created": 12,
+        "removed": 12
+      },
+      "subscriptions": {
+        "active": 0,
+        "created": 92,
+        "removed": 92
+      },
+      "negotiations": {
+        "started": 37,
+        "completed": 36,
+        "coalesced": 88,
+        "failed": 1
+      },
+      "rtp": {
+        "packetsReceived": 0,
+        "packetsSent": 0,
+        "packetsLost": 0,
+        "bytesReceived": 0,
+        "bytesSent": 0
+      }
+    }
+  },
+  "summary": {
+    "participants": 10,
+    "failedConnections": 0,
+    "redirectedConnections": 0,
+    "localMessages": 0,
+    "remoteMessages": 0,
+    "remoteMessageErrors": 0,
+    "peerConnections": {
+      "active": 0,
+      "created": 12,
+      "closed": 12
+    },
+    "tracks": {
+      "active": 0,
+      "created": 12,
+      "removed": 12
+    },
+    "publications": {
+      "active": 0,
+      "created": 12,
+      "removed": 12
+    },
+    "subscriptions": {
+      "active": 0,
+      "created": 92,
+      "removed": 92
+    },
+    "negotiations": {
+      "started": 37,
+      "completed": 36,
+      "coalesced": 88,
+      "failed": 1
+    },
+    "goroutines": {
+      "avg": 299.9047619047619,
+      "min": 8,
+      "max": 453,
+      "p50": 382,
+      "p95": 453,
+      "p99": 453
+    },
+    "heapAllocMb": {
+      "avg": 15.367007300967263,
+      "min": 1.1915817260742188,
+      "max": 30.054641723632812,
+      "p50": 19.568344116210938,
+      "p95": 28.90032958984375,
+      "p99": 29.823779296875003
+    },
+    "cpuPercent": {
+      "avg": 25.832078573199592,
+      "min": 0.9289343330391305,
+      "max": 108.52947302466806,
+      "p50": 20.427878819006693,
+      "p95": 65.00920783585703,
+      "p99": 99.8254199869058
+    },
+    "networkInMbps": {
+      "avg": 0.04866856108314072,
+      "min": 0.010403973485553589,
+      "max": 0.055709208643880674,
+      "p50": 0.05530907011687107,
+      "p95": 0.05558571531211702,
+      "p99": 0.05568450997752794
+    },
+    "networkOutMbps": {
+      "avg": 0,
+      "min": 0,
+      "max": 0,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0
+    },
+    "packetsSent": 0,
+    "packetsReceived": 360564,
+    "packetsLost": 0,
+    "packetLossPct": 0,
+    "rttMs": {
+      "avg": 0.263050448275862,
+      "min": 0.055596,
+      "max": 1.160469,
+      "p50": 0.25958699999999996,
+      "p95": 0.400296,
+      "p99": 0.9974415200000009
+    },
+    "jitterMs": {
+      "avg": 0.7098922239624508,
+      "min": 0.33205948950021874,
+      "max": 1.3119624070416371,
+      "p50": 0.702533058264605,
+      "p95": 1.0453337772992173,
+      "p99": 1.1838619444843674
+    },
+    "clientBitrateInMbps": {
+      "avg": 0.04638576409609078,
+      "min": 0.00983897419838905,
+      "max": 0.05570592748079676,
+      "p50": 0.04443821385186324,
+      "p95": 0.05558129454899498,
+      "p99": 0.05570299342829059
+    },
+    "clientBitrateOutMbps": {
+      "avg": 0,
+      "min": 0,
+      "max": 0,
+      "p50": 0,
+      "p95": 0,
+      "p99": 0
+    },
+    "connectionTimeMs": {
+      "avg": 1052.6545724137945,
+      "min": 1034.543,
+      "max": 1144.516,
+      "p50": 1041.959,
+      "p95": 1144.516,
+      "p99": 1144.516
+    },
+    "mediaStartTimeMs": {
+      "avg": 1212.0800972222232,
+      "min": 1045.206,
+      "max": 2101.325,
+      "p50": 1089.021,
+      "p95": 2101.325,
+      "p99": 2101.325
+    },
+    "audioQuality": "GOOD",
+    "videoQuality": "GOOD",
+    "connectionQuality": "GOOD",
+    "overallQuality": "GOOD",
+    "likelyBottleneck": "not identified"
+  },
+  "serverSamples": [
+    {
+      "timestamp": "2026-09-03T18:59:36.509358201Z",
+      "uptimeSec": 22.786932486,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 10,
+        "heapAllocBytes": 1249464,
+        "heapSysBytes": 7766016,
+        "allocBytes": 1249464,
+        "totalAllocBytes": 13977112,
+        "sysBytes": 13718792,
+        "numGC": 6,
+        "goCpuSeconds": 0.527044351
+      },
+      "sfu": {
+        "rooms": {
+          "active": 0,
+          "created": 1,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 0,
+          "created": 2,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 0,
+          "created": 2,
+          "removed": 2
+        },
+        "publications": {
+          "active": 0,
+          "created": 2,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 0,
+          "created": 2,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 2,
+          "completed": 2,
+          "coalesced": 0,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 0,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:37.509457066Z",
+      "uptimeSec": 23.787031381,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 25,
+        "heapAllocBytes": 1808360,
+        "heapSysBytes": 7700480,
+        "allocBytes": 1808360,
+        "totalAllocBytes": 16841080,
+        "sysBytes": 13980936,
+        "numGC": 7,
+        "goCpuSeconds": 0.536334613
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 1,
+          "created": 3,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 0,
+          "created": 2,
+          "removed": 2
+        },
+        "publications": {
+          "active": 0,
+          "created": 2,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 0,
+          "created": 2,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 2,
+          "completed": 2,
+          "coalesced": 0,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 0,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:38.509075155Z",
+      "uptimeSec": 24.786649461,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 58,
+        "heapAllocBytes": 2619704,
+        "heapSysBytes": 7602176,
+        "allocBytes": 2619704,
+        "totalAllocBytes": 23857392,
+        "sysBytes": 13980936,
+        "numGC": 10,
+        "goCpuSeconds": 0.580636254
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 2,
+          "created": 4,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 2,
+          "created": 4,
+          "removed": 2
+        },
+        "publications": {
+          "active": 2,
+          "created": 4,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 2,
+          "created": 4,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 4,
+          "completed": 4,
+          "coalesced": 0,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 77,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 1300,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:39.509167977Z",
+      "uptimeSec": 25.786742262,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 95,
+        "heapAllocBytes": 1670784,
+        "heapSysBytes": 7405568,
+        "allocBytes": 1670784,
+        "totalAllocBytes": 34707192,
+        "sysBytes": 14243080,
+        "numGC": 17,
+        "goCpuSeconds": 0.6640653000000001
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 3,
+          "created": 5,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 4,
+          "created": 6,
+          "removed": 2
+        },
+        "publications": {
+          "active": 4,
+          "created": 6,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 6,
+          "created": 8,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 8,
+          "completed": 8,
+          "coalesced": 0,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 232,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 3915,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:40.509001824Z",
+      "uptimeSec": 26.78657615,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 140,
+        "heapAllocBytes": 2754016,
+        "heapSysBytes": 11370496,
+        "allocBytes": 2754016,
+        "totalAllocBytes": 55670344,
+        "sysBytes": 18437384,
+        "numGC": 29,
+        "goCpuSeconds": 0.8431504690000001
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 4,
+          "created": 6,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 6,
+          "created": 8,
+          "removed": 2
+        },
+        "publications": {
+          "active": 6,
+          "created": 8,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 14,
+          "created": 16,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 15,
+          "completed": 15,
+          "coalesced": 3,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 465,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 7850,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:41.508730981Z",
+      "uptimeSec": 27.786305276,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 191,
+        "heapAllocBytes": 4401656,
+        "heapSysBytes": 11141120,
+        "allocBytes": 4401656,
+        "totalAllocBytes": 90043280,
+        "sysBytes": 18437384,
+        "numGC": 41,
+        "goCpuSeconds": 1.109374355
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 5,
+          "created": 7,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 8,
+          "created": 10,
+          "removed": 2
+        },
+        "publications": {
+          "active": 8,
+          "created": 10,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 25,
+          "created": 27,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 23,
+          "completed": 23,
+          "coalesced": 9,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 775,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 13108,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:42.508025842Z",
+      "uptimeSec": 28.786919576,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 254,
+        "heapAllocBytes": 5128552,
+        "heapSysBytes": 19234816,
+        "allocBytes": 5128552,
+        "totalAllocBytes": 126415920,
+        "sysBytes": 26825992,
+        "numGC": 49,
+        "goCpuSeconds": 1.440835172
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 6,
+          "created": 8,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 42,
+          "created": 44,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 29,
+          "completed": 29,
+          "coalesced": 20,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 1151,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 19505,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:43.507169344Z",
+      "uptimeSec": 29.786063068,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 294,
+        "heapAllocBytes": 7101672,
+        "heapSysBytes": 19005440,
+        "allocBytes": 7101672,
+        "totalAllocBytes": 138955064,
+        "sysBytes": 26825992,
+        "numGC": 52,
+        "goCpuSeconds": 1.5942928459999999
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 7,
+          "created": 9,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 50,
+          "created": 52,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 30,
+          "completed": 30,
+          "coalesced": 27,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 1554,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 26397,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:44.507702492Z",
+      "uptimeSec": 30.786596206,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 338,
+        "heapAllocBytes": 12621200,
+        "heapSysBytes": 18776064,
+        "allocBytes": 12621200,
+        "totalAllocBytes": 151923296,
+        "sysBytes": 26825992,
+        "numGC": 54,
+        "goCpuSeconds": 1.7894410170000001
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 8,
+          "created": 10,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 60,
+          "created": 62,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 31,
+          "completed": 31,
+          "coalesced": 36,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 1955,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 33277,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:45.507314027Z",
+      "uptimeSec": 31.786207751,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 382,
+        "heapAllocBytes": 14198408,
+        "heapSysBytes": 22708224,
+        "allocBytes": 14198408,
+        "totalAllocBytes": 165218416,
+        "sysBytes": 31282440,
+        "numGC": 56,
+        "goCpuSeconds": 2.016284218
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 9,
+          "created": 11,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 70,
+          "created": 72,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 32,
+          "completed": 32,
+          "coalesced": 45,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 2356,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 40186,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:46.507993661Z",
+      "uptimeSec": 32.786887385,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 426,
+        "heapAllocBytes": 21000440,
+        "heapSysBytes": 26673152,
+        "allocBytes": 21000440,
+        "totalAllocBytes": 178833248,
+        "sysBytes": 35476744,
+        "numGC": 57,
+        "goCpuSeconds": 2.220701841
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 80,
+          "created": 82,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 33,
+          "completed": 33,
+          "coalesced": 54,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 2758,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 47128,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:47.508340378Z",
+      "uptimeSec": 33.787234102,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 23337304,
+        "heapSysBytes": 30801920,
+        "allocBytes": 23337304,
+        "totalAllocBytes": 189679608,
+        "sysBytes": 40064264,
+        "numGC": 58,
+        "goCpuSeconds": 2.440155377
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 3160,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 54070,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:48.507802113Z",
+      "uptimeSec": 34.786695827,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 26381624,
+        "heapSysBytes": 30670848,
+        "allocBytes": 26381624,
+        "totalAllocBytes": 192723928,
+        "sysBytes": 40064264,
+        "numGC": 58,
+        "goCpuSeconds": 2.440155377
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 3561,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 60991,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:49.507299566Z",
+      "uptimeSec": 35.7861933,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 20518896,
+        "heapSysBytes": 30703616,
+        "allocBytes": 20518896,
+        "totalAllocBytes": 195535352,
+        "sysBytes": 40064264,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 3963,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 67933,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:50.507527095Z",
+      "uptimeSec": 36.786420820000004,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 23033032,
+        "heapSysBytes": 30703616,
+        "allocBytes": 23033032,
+        "totalAllocBytes": 198049488,
+        "sysBytes": 40064264,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 4364,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 74854,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:51.507209382Z",
+      "uptimeSec": 37.786103096,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 25187752,
+        "heapSysBytes": 30703616,
+        "allocBytes": 25187752,
+        "totalAllocBytes": 200204208,
+        "sysBytes": 40064264,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 4766,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 81796,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:52.507268611Z",
+      "uptimeSec": 38.786162325,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 27130920,
+        "heapSysBytes": 34897920,
+        "allocBytes": 27130920,
+        "totalAllocBytes": 202147376,
+        "sysBytes": 44389640,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 5166,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 88696,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:53.507175114Z",
+      "uptimeSec": 39.786068828,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 28844056,
+        "heapSysBytes": 34897920,
+        "allocBytes": 28844056,
+        "totalAllocBytes": 203860512,
+        "sysBytes": 44389640,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 5569,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 95659,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:54.507958468Z",
+      "uptimeSec": 40.786852182,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 30304192,
+        "heapSysBytes": 39092224,
+        "allocBytes": 30304192,
+        "totalAllocBytes": 205320648,
+        "sysBytes": 48583944,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 5970,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 102580,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:55.507326513Z",
+      "uptimeSec": 41.786220247,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 453,
+        "heapAllocBytes": 31514576,
+        "heapSysBytes": 39092224,
+        "allocBytes": 31514576,
+        "totalAllocBytes": 206531032,
+        "sysBytes": 48583944,
+        "numGC": 59,
+        "goCpuSeconds": 2.799931466
+      },
+      "sfu": {
+        "rooms": {
+          "active": 1,
+          "created": 2,
+          "closed": 1
+        },
+        "peerConnections": {
+          "active": 10,
+          "created": 12,
+          "closed": 2
+        },
+        "tracks": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "publications": {
+          "active": 10,
+          "created": 12,
+          "removed": 2
+        },
+        "subscriptions": {
+          "active": 90,
+          "created": 92,
+          "removed": 2
+        },
+        "negotiations": {
+          "started": 34,
+          "completed": 34,
+          "coalesced": 63,
+          "failed": 0
+        },
+        "rtp": {
+          "packetsReceived": 6371,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 109501,
+          "bytesSent": 0
+        }
+      }
+    },
+    {
+      "timestamp": "2026-09-03T18:59:57.024256255Z",
+      "uptimeSec": 43.303149999,
+      "host": {
+        "os": "linux",
+        "arch": "amd64",
+        "cpus": 4,
+        "go": "go1.24.13",
+        "commit": "unavailable"
+      },
+      "runtime": {
+        "goroutines": 8,
+        "heapAllocBytes": 27576368,
+        "heapSysBytes": 45252608,
+        "allocBytes": 27576368,
+        "totalAllocBytes": 210403424,
+        "sysBytes": 52778248,
+        "numGC": 60,
+        "goCpuSeconds": 4.4462473319999996
+      },
+      "sfu": {
+        "rooms": {
+          "active": 0,
+          "created": 2,
+          "closed": 2
+        },
+        "peerConnections": {
+          "active": 0,
+          "created": 12,
+          "closed": 12
+        },
+        "tracks": {
+          "active": 0,
+          "created": 12,
+          "removed": 12
+        },
+        "publications": {
+          "active": 0,
+          "created": 12,
+          "removed": 12
+        },
+        "subscriptions": {
+          "active": 0,
+          "created": 92,
+          "removed": 92
+        },
+        "negotiations": {
+          "started": 37,
+          "completed": 36,
+          "coalesced": 88,
+          "failed": 1
+        },
+        "rtp": {
+          "packetsReceived": 0,
+          "packetsSent": 0,
+          "packetsLost": 0,
+          "bytesReceived": 0,
+          "bytesSent": 0
+        }
+      }
+    }
+  ],
+  "clientSamples": [
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "",
+      "iceState": "",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0.142583,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 73,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 1230,
+      "rttMs": 0.142583,
+      "jitterMs": 0.7259539382307972,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 9838.97419838905,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 74,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 1250,
+      "rttMs": 0.251742,
+      "jitterMs": 0.49677753826405846,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 9997.554118380047,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 221,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3725,
+      "rttMs": 0.13797399999999999,
+      "jitterMs": 0.5703514993938661,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 19960.69107904654,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 223,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3765,
+      "rttMs": 0.251742,
+      "jitterMs": 0.5581891508311038,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 20122.31034306204,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 141,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 2380,
+      "rttMs": 0.207804,
+      "jitterMs": 0.44612800666058827,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 19041.555161893182,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 447,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 7540,
+      "rttMs": 0.13797399999999999,
+      "jitterMs": 0.593554028967881,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 30516.361107036155,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 447,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 7568,
+      "rttMs": 0.263685,
+      "jitterMs": 0.5513447940055572,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 30422.0911658898,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 366,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 6203,
+      "rttMs": 0.207804,
+      "jitterMs": 0.5192567620820159,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 30583.61742952957,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 195,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3318,
+      "rttMs": 0.261911,
+      "jitterMs": 0.4590404122104604,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 26544.880732597827,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 738,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 12472,
+      "rttMs": 0.15188,
+      "jitterMs": 0.9080605552649238,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 39442.86722125862,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 738,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 12508,
+      "rttMs": 0.263685,
+      "jitterMs": 0.9344707443216358,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 39505.288112191156,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 655,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 11130,
+      "rttMs": 0.789952,
+      "jitterMs": 1.3119624070416371,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 39398.68585351481,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 486,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 8280,
+      "rttMs": 0.261911,
+      "jitterMs": 1.1428145049503757,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 39677.30679077435,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 211,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3605,
+      "rttMs": 0.269069,
+      "jitterMs": 0.7468674207766007,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 28825.97933191275,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1060,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 17963,
+      "rttMs": 0.15188,
+      "jitterMs": 0.6620689970233608,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 43967.75080382423,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1061,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 18020,
+      "rttMs": 0.390087,
+      "jitterMs": 0.6632597715405221,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44131.58166142509,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 977,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 16631,
+      "rttMs": 0.789952,
+      "jitterMs": 0.8036117245221169,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44044.790922170825,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 809,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 13822,
+      "rttMs": 0.400256,
+      "jitterMs": 0.7199538087960349,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44372.483144386286,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 533,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 9127,
+      "rttMs": 0.269069,
+      "jitterMs": 0.6237117565621481,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44212.14355999673,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 249,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 4261,
+      "rttMs": 0.279028,
+      "jitterMs": 0.4260062451309391,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 34116.05202612664,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1381,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 23463,
+      "rttMs": 0.206114,
+      "jitterMs": 0.7103787247270368,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 43986.20997128432,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1382,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 23520,
+      "rttMs": 0.390087,
+      "jitterMs": 1.0406870404720279,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 43988.51556633297,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1298,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 22131,
+      "rttMs": 0.359258,
+      "jitterMs": 0.5416236671961471,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 43989.35145370425,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1129,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 19312,
+      "rttMs": 0.400256,
+      "jitterMs": 0.5465909404325713,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 43907.77388036301,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 854,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 14657,
+      "rttMs": 0.158267,
+      "jitterMs": 0.5892511668255549,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44226.729239171036,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 650,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 11141,
+      "rttMs": 0.279028,
+      "jitterMs": 0.5269038693455159,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55023.38975919306,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 229,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3934,
+      "rttMs": 0.290736,
+      "jitterMs": 0.573909046930965,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 31464.749892329808,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1702,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 28992,
+      "rttMs": 0.206114,
+      "jitterMs": 1.1902345598815622,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44248.070323916734,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1702,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 29028,
+      "rttMs": 0.282905,
+      "jitterMs": 0.5101692069206168,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44080.46700781871,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1619,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 27660,
+      "rttMs": 0.359258,
+      "jitterMs": 0.696573200932818,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44248.905869723305,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1450,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 24841,
+      "rttMs": 0.258108,
+      "jitterMs": 1.0692758154536461,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44251.88688647055,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1175,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 20198,
+      "rttMs": 0.158267,
+      "jitterMs": 0.814138470301797,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44348.027391778014,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1051,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 18050,
+      "rttMs": 0.400306,
+      "jitterMs": 0.670858296732995,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55295.70654119546,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 630,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 10843,
+      "rttMs": 0.290736,
+      "jitterMs": 1.1754145240741332,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55289.98057813391,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 206,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3552,
+      "rttMs": 0.38216100000000003,
+      "jitterMs": 0.39557691307133613,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 28425.76740636427,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2024,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 34554,
+      "rttMs": 0.130449,
+      "jitterMs": 0.7080493838684909,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44431.42793907043,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2024,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 34590,
+      "rttMs": 0.282905,
+      "jitterMs": 0.640969686591238,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44432.80508750186,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1940,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 33201,
+      "rttMs": 0.11016100000000001,
+      "jitterMs": 0.5990964906729301,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44264.678757332134,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1772,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 30403,
+      "rttMs": 0.258108,
+      "jitterMs": 0.6173692039164852,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44432.42719398153,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1497,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 25760,
+      "rttMs": 0.055596,
+      "jitterMs": 0.6070531231737378,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44428.96384661863,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1454,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 25013,
+      "rttMs": 0.400306,
+      "jitterMs": 0.8246099907276448,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55618.33663791029,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1033,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 17806,
+      "rttMs": 0.258566,
+      "jitterMs": 0.8267737252119688,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55623.9133570355,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 609,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 10515,
+      "rttMs": 0.38216100000000003,
+      "jitterMs": 0.6430559896132948,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55625.53067701433,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 192,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 3318,
+      "rttMs": 0.30586399999999997,
+      "jitterMs": 0.39751298424774,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 26507.565272010925,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connecting",
+      "iceState": "checking",
+      "packetsSent": 0,
+      "packetsReceived": 0,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 0,
+      "rttMs": 0,
+      "jitterMs": 0,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 0,
+      "connectionTimeMs": 0,
+      "mediaStartMs": 0
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2345,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 40095,
+      "rttMs": 0.130449,
+      "jitterMs": 0.7629546998864795,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44318.92632030089,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2346,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 40152,
+      "rttMs": 0.18226799999999999,
+      "jitterMs": 0.6167720352142626,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44478.778484152615,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2262,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 38763,
+      "rttMs": 0.11016100000000001,
+      "jitterMs": 0.6683795607683971,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44478.84886691922,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2093,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 35944,
+      "rttMs": 0.218829,
+      "jitterMs": 0.8029087885020652,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44306.072481668096,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1818,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 31301,
+      "rttMs": 0.055596,
+      "jitterMs": 0.5678849805114481,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44310.22335873161,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1855,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 31934,
+      "rttMs": 1.160469,
+      "jitterMs": 0.7225716325977579,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55348.86927217363,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1435,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 24742,
+      "rttMs": 0.258566,
+      "jitterMs": 0.7804839742051662,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55383.85569928836,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1011,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 17451,
+      "rttMs": 0.292039,
+      "jitterMs": 0.6224646113988983,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55382.79611430557,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 594,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 10254,
+      "rttMs": 0.30586399999999997,
+      "jitterMs": 0.9822790879857501,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55382.446097540684,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 173,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 2985,
+      "rttMs": 0.257863,
+      "jitterMs": 0.33205948950021874,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 23831.695988203737,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2666,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 45636,
+      "rttMs": 0.149997,
+      "jitterMs": 0.7577555122962006,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44355.33077900875,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2666,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 45672,
+      "rttMs": 0.18226799999999999,
+      "jitterMs": 0.7367276838823645,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44195.9536734891,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2583,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 44304,
+      "rttMs": 0.093528,
+      "jitterMs": 0.8464159664197954,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44360.51346165504,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2414,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 41485,
+      "rttMs": 0.218829,
+      "jitterMs": 0.7246971432922051,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44364.078643315894,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2139,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 36842,
+      "rttMs": 0.31638499999999997,
+      "jitterMs": 0.6696614879437887,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44364.53019781018,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2256,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 38855,
+      "rttMs": 1.160469,
+      "jitterMs": 0.7397750501732805,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55410.5902419777,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1835,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 31648,
+      "rttMs": 0.174733,
+      "jitterMs": 1.0461537896804862,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55375.11829092187,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1411,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 24357,
+      "rttMs": 0.292039,
+      "jitterMs": 0.861331425619549,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55377.59020639378,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 994,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 17160,
+      "rttMs": 0.320403,
+      "jitterMs": 0.8000023315134257,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55374.90338596336,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 573,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 9891,
+      "rttMs": 0.257863,
+      "jitterMs": 0.6781725812433019,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55381.51158825802,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2988,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 51198,
+      "rttMs": 0.149997,
+      "jitterMs": 0.7310480412258523,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44529.40939169017,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2988,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 51234,
+      "rttMs": 0.263043,
+      "jitterMs": 0.7925805068775233,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44527.15832430902,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2904,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 49845,
+      "rttMs": 0.093528,
+      "jitterMs": 0.8975956043688424,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44362.35407390777,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2736,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 47047,
+      "rttMs": 0.31411,
+      "jitterMs": 0.7455115284802373,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44531.3013876116,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2460,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 42383,
+      "rttMs": 0.31638499999999997,
+      "jitterMs": 0.6611021276069833,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44359.79008868874,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2658,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 45797,
+      "rttMs": 0.271269,
+      "jitterMs": 0.4011842236710607,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55576.38546972375,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2237,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 38590,
+      "rttMs": 0.174733,
+      "jitterMs": 0.659165244491687,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55575.010267131904,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1813,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 31299,
+      "rttMs": 0.246781,
+      "jitterMs": 0.6839370568018326,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55572.72356718767,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1396,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 24102,
+      "rttMs": 0.320403,
+      "jitterMs": 0.8934728505502567,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55575.849106478025,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 975,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 16833,
+      "rttMs": 0.18515299999999998,
+      "jitterMs": 0.7209795465640835,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55576.474901682544,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3308,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 56718,
+      "rttMs": 0.160753,
+      "jitterMs": 1.053025993485159,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44160.09512084489,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3309,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 56775,
+      "rttMs": 0.263043,
+      "jitterMs": 1.0695450126622552,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44329.18899750729,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3225,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 55386,
+      "rttMs": 0.270939,
+      "jitterMs": 0.7182239521162184,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44327.77663233355,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3057,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 52588,
+      "rttMs": 0.31411,
+      "jitterMs": 0.7673019866430119,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44327.242358773605,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2781,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 47924,
+      "rttMs": 0.089902,
+      "jitterMs": 0.6742963734990512,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44323.18393148037,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3059,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 52718,
+      "rttMs": 0.271269,
+      "jitterMs": 0.7068477890603706,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55361.62510886871,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2638,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 45511,
+      "rttMs": 0.280115,
+      "jitterMs": 0.7242456170025764,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55363.37826518242,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2214,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 38220,
+      "rttMs": 0.246781,
+      "jitterMs": 0.6495317141895379,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55363.09931381184,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1797,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 31023,
+      "rttMs": 0.289443,
+      "jitterMs": 0.7962582602745638,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55363.83149103554,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1376,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 23754,
+      "rttMs": 0.18515299999999998,
+      "jitterMs": 0.8032158808262984,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55360.81787501462,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3630,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 62280,
+      "rttMs": 0.160753,
+      "jitterMs": 0.5984913643035019,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44475.95304235355,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3630,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 62316,
+      "rttMs": 0.273743,
+      "jitterMs": 0.7630433172989213,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44298.17744808387,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3547,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 60948,
+      "rttMs": 0.270939,
+      "jitterMs": 0.6999795838704055,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44464.51694324285,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3378,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 58129,
+      "rttMs": 0.470395,
+      "jitterMs": 0.7181280696809216,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44294.97672170969,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3103,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 53486,
+      "rttMs": 0.089902,
+      "jitterMs": 0.6194517989784475,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44466.0433155504,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3461,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 59660,
+      "rttMs": 0.12253399999999999,
+      "jitterMs": 0.5774823006451023,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55498.82072950628,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3040,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 52453,
+      "rttMs": 0.280115,
+      "jitterMs": 0.6983275733283917,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55496.96038573185,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2616,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 45162,
+      "rttMs": 0.267111,
+      "jitterMs": 0.6086361759194301,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55495.3202099312,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2199,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 37965,
+      "rttMs": 0.289443,
+      "jitterMs": 0.7764501933902118,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55493.30616940527,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 1778,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 30696,
+      "rttMs": 0.30829,
+      "jitterMs": 0.5968146174568012,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55495.18717449626,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3950,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 67800,
+      "rttMs": 0.16564600000000002,
+      "jitterMs": 0.7764041615317738,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44179.468964203676,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3950,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 67836,
+      "rttMs": 0.273743,
+      "jitterMs": 0.5458740466815113,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44188.325467826406,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3867,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 66468,
+      "rttMs": 0.24991800000000003,
+      "jitterMs": 0.6798857053323311,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44188.5939530725,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3698,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 63649,
+      "rttMs": 0.470395,
+      "jitterMs": 0.5605834767093787,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44183.97532961323,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3423,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 59006,
+      "rttMs": 0.196385,
+      "jitterMs": 0.720671347459461,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44186.94665824143,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3861,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 66560,
+      "rttMs": 0.12253399999999999,
+      "jitterMs": 0.7316122743499226,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55235.183983669835,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3440,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 59353,
+      "rttMs": 0.194267,
+      "jitterMs": 0.54613548206989,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55231.88702533634,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3016,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 52062,
+      "rttMs": 0.267111,
+      "jitterMs": 0.7291691070203596,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55234.44187810863,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2599,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 44865,
+      "rttMs": 0.25932499999999997,
+      "jitterMs": 0.7090003417733366,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55235.19332436739,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2179,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 37617,
+      "rttMs": 0.30829,
+      "jitterMs": 0.607697137480839,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55403.74810498603,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4272,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 73362,
+      "rttMs": 0.16564600000000002,
+      "jitterMs": 0.8451835424959414,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44491.84837664428,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4273,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 73419,
+      "rttMs": 0.251782,
+      "jitterMs": 0.6769784267273227,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44659.47411957377,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4189,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 72030,
+      "rttMs": 0.24991800000000003,
+      "jitterMs": 0.6426693140845505,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44494.419246767415,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4021,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 69232,
+      "rttMs": 0.182468,
+      "jitterMs": 0.6418479483589649,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44664.9910268209,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3745,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 64568,
+      "rttMs": 0.196385,
+      "jitterMs": 0.8071393153300352,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44497.08492792471,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4264,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 73523,
+      "rttMs": 0.233176,
+      "jitterMs": 0.7205117930741742,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55703.38575876524,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3843,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 66316,
+      "rttMs": 0.194267,
+      "jitterMs": 0.7047632134899221,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55705.92748079676,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3419,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 59025,
+      "rttMs": 0.25958699999999996,
+      "jitterMs": 0.5971652541878342,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55702.473362312565,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3002,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 51828,
+      "rttMs": 0.25932499999999997,
+      "jitterMs": 0.8883598793683803,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55702.112868118136,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2581,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 44559,
+      "rttMs": 0.26668,
+      "jitterMs": 0.6388647895959072,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55530.327799136634,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4593,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 78903,
+      "rttMs": 0.077228,
+      "jitterMs": 0.715280330879369,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44292.390733838016,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4594,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 78960,
+      "rttMs": 0.251782,
+      "jitterMs": 0.7054910904577917,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44291.463971370016,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4510,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 77571,
+      "rttMs": 0.253854,
+      "jitterMs": 0.7676227648260834,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44291.479062315855,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4341,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 74752,
+      "rttMs": 0.182468,
+      "jitterMs": 0.6620060873329253,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44127.47575573928,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4067,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 70130,
+      "rttMs": 0.18809,
+      "jitterMs": 0.6970405523214562,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44463.92590258625,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4666,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 80465,
+      "rttMs": 0.233176,
+      "jitterMs": 0.7285805357745062,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55497.28426203954,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4245,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 73258,
+      "rttMs": 0.14648,
+      "jitterMs": 0.6517912813902084,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55499.50252814645,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3821,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 65967,
+      "rttMs": 0.25958699999999996,
+      "jitterMs": 0.6579144767262796,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55504.453544288015,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3404,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 58770,
+      "rttMs": 0.311054,
+      "jitterMs": 0.7141067189158332,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55505.586269059735,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 2983,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 51501,
+      "rttMs": 0.26668,
+      "jitterMs": 0.700302903039288,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55506.164382027535,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4914,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 84444,
+      "rttMs": 0.077228,
+      "jitterMs": 0.8530379372365184,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44359.08817976902,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4914,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 84480,
+      "rttMs": 0.292269,
+      "jitterMs": 0.5100357311710224,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44185.845582470705,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4831,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 83112,
+      "rttMs": 0.253854,
+      "jitterMs": 0.439225614484241,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44346.27993570602,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4662,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 80293,
+      "rttMs": 0.312509,
+      "jitterMs": 0.8613232252453525,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44344.110925004825,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4387,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 75650,
+      "rttMs": 0.18809,
+      "jitterMs": 0.5384398084401588,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44174.24208486785,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 5066,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 87365,
+      "rttMs": 0.28297700000000003,
+      "jitterMs": 0.7927850251705618,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55216.502666584965,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4645,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 80158,
+      "rttMs": 0.14648,
+      "jitterMs": 0.6084157319014246,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55216.21435177683,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4221,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 72867,
+      "rttMs": 0.311115,
+      "jitterMs": 0.7976587189008977,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55208.931700970585,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3804,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 65670,
+      "rttMs": 0.311054,
+      "jitterMs": 0.5224119669069417,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55208.37290183429,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3383,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 58401,
+      "rttMs": 0.259943,
+      "jitterMs": 0.47882726695967354,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55210.52036465549,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    },
+    {
+      "participant": "anonymous-56640b72-db8e-493f-80d4-cff677dc508e.b1f60423",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 5235,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 89991,
+      "rttMs": 0.205668,
+      "jitterMs": 0.9329753325511284,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44443.622616224624,
+      "connectionTimeMs": 1037.917,
+      "mediaStartMs": 2101.325
+    },
+    {
+      "participant": "anonymous-258e9387-5872-4f77-978a-8937bdb17101.1d471154",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 5236,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 90042,
+      "rttMs": 0.292269,
+      "jitterMs": 0.7455590302815712,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44539.78875884079,
+      "connectionTimeMs": 1036.464,
+      "mediaStartMs": 1045.206
+    },
+    {
+      "participant": "anonymous-b2e41f01-30d6-462d-a75d-3543a088a230.b183c2b3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 5152,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 88653,
+      "rttMs": 0.39843799999999996,
+      "jitterMs": 0.8631170138545801,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44374.90689470721,
+      "connectionTimeMs": 1034.543,
+      "mediaStartMs": 1052.957
+    },
+    {
+      "participant": "anonymous-6e785009-e504-4553-b862-8ab345615871.2c249717",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4984,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 85855,
+      "rttMs": 0.312509,
+      "jitterMs": 0.6823005487402001,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44540.04823702439,
+      "connectionTimeMs": 1041.959,
+      "mediaStartMs": 1049.291
+    },
+    {
+      "participant": "anonymous-609e3415-6ed9-494e-8fe7-e305e8ff0663.c75d426c",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4708,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 81191,
+      "rttMs": 0.10222500000000001,
+      "jitterMs": 0.676099440762166,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 44367.8425000364,
+      "connectionTimeMs": 1144.516,
+      "mediaStartMs": 1179.207
+    },
+    {
+      "participant": "anonymous-93a826a8-6026-4179-b185-98f0eff84c33.fdc5e43a",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 5468,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 94307,
+      "rttMs": 0.28297700000000003,
+      "jitterMs": 0.8830819405986171,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55582.14507499129,
+      "connectionTimeMs": 1049.839,
+      "mediaStartMs": 1074.72
+    },
+    {
+      "participant": "anonymous-30ba9b05-819c-4741-b808-8b742a956ae3.aa12b8ec",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 5047,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 87100,
+      "rttMs": 0.32305799999999996,
+      "jitterMs": 0.6866187984973192,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55570.95073818633,
+      "connectionTimeMs": 1042.623,
+      "mediaStartMs": 1090.879
+    },
+    {
+      "participant": "anonymous-fa0ff754-6cd9-4cc7-8f7a-180a30ded4dc.7023f6e3",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4623,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 79809,
+      "rttMs": 0.311115,
+      "jitterMs": 0.8350036646517479,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55571.32346719133,
+      "connectionTimeMs": 1041.069,
+      "mediaStartMs": 1104.764
+    },
+    {
+      "participant": "anonymous-6a5f03a8-012e-47b9-883b-53e21fc2ffd5.a91ad6b9",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 4206,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 72612,
+      "rttMs": 0.274306,
+      "jitterMs": 0.5886758655447916,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55557.60023939708,
+      "connectionTimeMs": 1059.36,
+      "mediaStartMs": 1104.551
+    },
+    {
+      "participant": "anonymous-513df546-3ab6-4bc6-ae82-69d72f4fd248.96f61fed",
+      "connectionState": "connected",
+      "iceState": "connected",
+      "packetsSent": 0,
+      "packetsReceived": 3785,
+      "packetsLost": 0,
+      "bytesSent": 0,
+      "bytesReceived": 65343,
+      "rttMs": 0.259943,
+      "jitterMs": 0.8534480641051819,
+      "fps": 0,
+      "bitrateOutBps": 0,
+      "bitrateInBps": 55539.42028411936,
+      "connectionTimeMs": 1043.419,
+      "mediaStartMs": 1089.021
+    }
+  ]
+}

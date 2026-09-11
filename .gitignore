@@ -1,0 +1,16 @@
+/pulsertc
+/out
+*.exe
+.env
+.superpowers/
+benchmarks/**/pprof/*.pprof
+
+# Not part of the shipped project — internal docs/notes and the Go learning
+# tutorial. Kept locally, not published.
+/docs/
+/learn/
+
+# Sprint 9 proof-of-concept compose (no Redis, no cross-node media, hardcoded
+# secret fallbacks) — superseded by deploy/docker-compose.redis.yml, not a
+# production setup. Kept locally, not published.
+/deploy/docker-compose.multinode.yml

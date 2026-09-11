@@ -1,0 +1,32 @@
+name: bench
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24"
+
+      - name: Build server
+        run: go build -o /tmp/pulsertc ./cmd/server
+
+      - name: Load-regression check
+        env:
+          BENCH_DURATION: 20s
+        run: |
+          PULSERTC_AUTH_ENABLED=false PULSERTC_METRICS_PUBLIC=true PORT=8090 SFU_NAT_1TO1_IP=127.0.0.1 /tmp/pulsertc &
+          SRV_PID=$!
+          for i in $(seq 1 60); do curl -sf localhost:8090/health && break; sleep 1; done
+          bash scripts/bench-regression.sh http://localhost:8090
+          RC=$?
+          kill $SRV_PID 2>/dev/null || true
+          exit $RC

@@ -1,0 +1,15 @@
+.git
+docs
+*.md
+Sprint1.md
+
+# SDK: the browser bundle is rebuilt inside the image (sdk stage); keep the
+# host's node_modules / build output / test assets out of the build context.
+sdk/node_modules
+sdk/dist
+sdk/playwright-report
+sdk/test-results
+sdk/e2e
+sdk/tests
+
+web/example-sdk/node_modules

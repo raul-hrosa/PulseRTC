@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: github.com/raulhrosa/pulsertc/internal/cluster
+cpu: AMD Ryzen 5 3600 6-Core Processor              
+BenchmarkClaimRoomLocalHit-4        	26179933	        48.93 ns/op	       0 B/op	       0 allocs/op
+BenchmarkResolveRoomLocalMiss-4     	60349608	        18.90 ns/op	       0 B/op	       0 allocs/op
+BenchmarkDisabledClaimRoom-4        	 8408023	       138.1 ns/op	      12 B/op	       1 allocs/op
+BenchmarkInternalRoomLookupHTTP-4   	    7220	    163731 ns/op	    9174 B/op	     105 allocs/op
+BenchmarkParticipantRegister-4      	 8776972	       142.1 ns/op	      15 B/op	       1 allocs/op
+PASS
+ok  	github.com/raulhrosa/pulsertc/internal/cluster	6.420s

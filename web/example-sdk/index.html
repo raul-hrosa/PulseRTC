@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PulseRTC — SDK demo client</title>
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<header>
+  <h1>PulseRTC — <code>@pulsertc/client</code> demo</h1>
+  <span id="conn" class="badge state-disconnected">disconnected</span>
+</header>
+
+<section id="connectPanel">
+  <label>Server WS URL <input id="url" value="ws://localhost:8090/ws" /></label>
+  <label>Room ID <input id="roomId" value="demo" /></label>
+  <label>Participant JWT
+    <input id="token" placeholder="PULSERTC_JWT_SECRET=… go run ./cmd/token -sub alice -room demo" />
+  </label>
+  <div class="row">
+    <button id="join">Join &amp; publish</button>
+    <button id="leave" disabled>Leave</button>
+    <span class="hint">Auth on: paste a token whose <code>room</code> claim is the Room ID.
+      Auth off (<code>PULSERTC_AUTH_ENABLED=false</code>): leave it blank.</span>
+  </div>
+</section>
+
+<div id="stage" hidden>
+  <section id="local">
+    <h2>You <span id="localId" class="muted"></span></h2>
+    <div class="row">
+      <figure>
+        <video id="localVideo" autoplay muted playsinline></video>
+        <figcaption id="localBadges"></figcaption>
+      </figure>
+      <figure id="localScreenFigure" hidden>
+        <video id="localScreen" autoplay muted playsinline></video>
+        <figcaption>your screen</figcaption>
+      </figure>
+    </div>
+    <div class="row">
+      <button id="mic">🎤 Mute</button>
+      <button id="cam">📹 Camera off</button>
+      <button id="screen">🖥️ Share screen</button>
+    </div>
+  </section>
+
+  <section id="remotes">
+    <h2>Room <span id="participantCount" class="muted">0</span></h2>
+    <div id="tiles"></div>
+  </section>
+
+  <aside>
+    <section>
+      <h2>Participants</h2>
+      <ul id="participantList"></ul>
+    </section>
+
+    <section>
+      <h2>Quality (QoE)</h2>
+      <table id="qoe"><thead><tr><th>participant</th><th>status</th><th>where</th><th>reason</th></tr></thead>
+        <tbody id="qoeBody"><tr><td colspan="4" class="muted">no reports yet</td></tr></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Event log</h2>
+      <pre id="log"></pre>
+    </section>
+  </aside>
+</div>
+
+<p class="footnote">
+  This client uses only the SDK. Selective subscribe/unsubscribe, video unpublish/re-publish and the raw
+  <code>/sfu/stats</code> diagnostics are not in the SDK v1 surface — the hand-rolled client at
+  <a href="/">/</a> still covers those.
+</p>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
